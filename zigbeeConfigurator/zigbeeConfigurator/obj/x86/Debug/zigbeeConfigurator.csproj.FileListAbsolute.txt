@@ -1,0 +1,14 @@
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\zigbeeConfigurator.exe
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\zigbeeConfigurator.pdb
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\zigbeeConfigurator.Form1.resources
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\zigbeeConfigurator.Properties.Resources.resources
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\zigbeeConfigurator.csproj.GenerateResource.Cache
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\zigbeeConfigurator.exe
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\zigbeeConfigurator.pdb
+D:\Visual Studio 2010\Projects\zigbeeConfigurator\zigbeeConfigurator\obj\x86\Debug\zigbeeConfigurator.exe
+D:\Visual Studio 2010\Projects\zigbeeConfigurator\zigbeeConfigurator\obj\x86\Debug\zigbeeConfigurator.pdb
+D:\Visual Studio 2010\Projects\zigbeeConfigurator\zigbeeConfigurator\bin\Debug\zigbeeConfigurator.exe
+D:\Visual Studio 2010\Projects\zigbeeConfigurator\zigbeeConfigurator\bin\Debug\zigbeeConfigurator.pdb
+D:\Visual Studio 2010\Projects\zigbeeConfigurator\zigbeeConfigurator\obj\x86\Debug\zigbeeConfigurator.Form1.resources
+D:\Visual Studio 2010\Projects\zigbeeConfigurator\zigbeeConfigurator\obj\x86\Debug\zigbeeConfigurator.Properties.Resources.resources
+D:\Visual Studio 2010\Projects\zigbeeConfigurator\zigbeeConfigurator\obj\x86\Debug\zigbeeConfigurator.csproj.GenerateResource.Cache

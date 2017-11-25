@@ -1,0 +1,7 @@
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\zigbeeConfigurator.exe
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\zigbeeConfigurator.pdb
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\zigbeeConfigurator.exe
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\zigbeeConfigurator.pdb
+C:\Users\Utilisateur\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\zigbeeConfigurator.Properties.Resources.resources
