@@ -14,3 +14,5 @@ Les options configurées sont :
 
 
 ![zigbeeConfiguratorV1](ConfigureZigbee.png)
+
+Mise à jour : Lecture de la configuration courante du module.

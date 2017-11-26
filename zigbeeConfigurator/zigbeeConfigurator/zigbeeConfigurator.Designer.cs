@@ -34,6 +34,7 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.grbConfigurer = new System.Windows.Forms.GroupBox();
+            this.btnLireConfig = new System.Windows.Forms.Button();
             this.btnConfigurer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txbDeviceName = new System.Windows.Forms.TextBox();
@@ -82,11 +83,12 @@
             // 
             // serialPort1
             // 
-            this.serialPort1.ReadTimeout = 1000;
+            this.serialPort1.ReadTimeout = 5000;
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // grbConfigurer
             // 
+            this.grbConfigurer.Controls.Add(this.btnLireConfig);
             this.grbConfigurer.Controls.Add(this.btnConfigurer);
             this.grbConfigurer.Controls.Add(this.label3);
             this.grbConfigurer.Controls.Add(this.txbDeviceName);
@@ -102,11 +104,21 @@
             this.grbConfigurer.TabStop = false;
             this.grbConfigurer.Text = "configuration du module Zigbee";
             // 
+            // btnLireConfig
+            // 
+            this.btnLireConfig.Location = new System.Drawing.Point(6, 197);
+            this.btnLireConfig.Name = "btnLireConfig";
+            this.btnLireConfig.Size = new System.Drawing.Size(160, 33);
+            this.btnLireConfig.TabIndex = 7;
+            this.btnLireConfig.Text = "Lire la config";
+            this.btnLireConfig.UseVisualStyleBackColor = true;
+            this.btnLireConfig.Click += new System.EventHandler(this.btnLireConfig_Click);
+            // 
             // btnConfigurer
             // 
-            this.btnConfigurer.Location = new System.Drawing.Point(116, 199);
+            this.btnConfigurer.Location = new System.Drawing.Point(226, 197);
             this.btnConfigurer.Name = "btnConfigurer";
-            this.btnConfigurer.Size = new System.Drawing.Size(148, 33);
+            this.btnConfigurer.Size = new System.Drawing.Size(160, 33);
             this.btnConfigurer.TabIndex = 6;
             this.btnConfigurer.Text = "Configurer";
             this.btnConfigurer.UseVisualStyleBackColor = true;
@@ -239,7 +251,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbPorts);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "zigbeeConfigurator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grbConfigurer.ResumeLayout(false);
             this.grbConfigurer.PerformLayout();
@@ -272,6 +284,7 @@
         private System.Windows.Forms.Button btnLine;
         private System.Windows.Forms.Button btnEnvoyer;
         private System.Windows.Forms.TextBox txbToSend;
+        private System.Windows.Forms.Button btnLireConfig;
     }
 }
 

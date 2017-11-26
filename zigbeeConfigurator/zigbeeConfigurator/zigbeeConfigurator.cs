@@ -99,14 +99,14 @@ namespace zigbeeConfigurator
                         }
                         else txbTerm.AppendText("ATDLFFFF\r\n" + receiveFromSerial + "\n");
 
-                        Thread.Sleep(2000);
+                        //Thread.Sleep(2000);
                         serialPort1.Write("ATCE1\r");
                         if ((receiveFromSerial = serialPort1.ReadTo("\r")) != "OK")
                         {
                             MessageBox.Show("Impossible de configurer CE1", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else txbTerm.AppendText("ATCE1\r\n" + receiveFromSerial + "\n");
-                        Thread.Sleep(1000);
+                        //Thread.Sleep(1000);
                     }
                     if (rdbRouter.Checked)
                     {
@@ -124,12 +124,15 @@ namespace zigbeeConfigurator
                         }
                         else txbTerm.AppendText("ATCE0\r\n" + receiveFromSerial + "\n");
                     }
-                    if (txbDeviceName.Text != "") serialPort1.Write("ATNI" + txbDeviceName.Text + "\r");
-                    if ((receiveFromSerial = serialPort1.ReadTo("\r")) != "OK")
+                    if (txbDeviceName.Text != "")
                     {
-                        MessageBox.Show("Impossible de configurer le nom du device", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        serialPort1.Write("ATNI" + txbDeviceName.Text + "\r");
+                        if ((receiveFromSerial = serialPort1.ReadTo("\r")) != "OK")
+                        {
+                            MessageBox.Show("Impossible de configurer le nom du device", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else txbTerm.AppendText("ATNI" + txbDeviceName.Text + "\r\n" + receiveFromSerial + "\n");
                     }
-                    else txbTerm.AppendText("ATNI" + txbDeviceName.Text + "\r\n" + receiveFromSerial + "\n");
                 }
 
                 serialPort1.Write("ATWR\r");
@@ -147,6 +150,7 @@ namespace zigbeeConfigurator
                     MessageBox.Show("Fin du mode COMMAND", "Message !", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txbTerm.Clear();
                     listenMode = true;
+                    receiveFromSerial = null;
                 }
             }
         }
@@ -173,6 +177,82 @@ namespace zigbeeConfigurator
         private void btnLine_Click(object sender, EventArgs e)
         {
             serialPort1.Write("\r\n");
+        }
+
+        private void btnLireConfig_Click(object sender, EventArgs e)
+        {
+            listenMode = false;
+            string JV,CE,ID,NI;
+            serialPort1.Write("+++");
+            
+            if ((receiveFromSerial = serialPort1.ReadTo("\r")) != "OK")
+            {
+                MessageBox.Show("Impossible d'entrer en mode COMMAND", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                serialPort1.Write("ATID\r");
+                
+                try
+                {
+                    if ((ID = serialPort1.ReadTo("\r")) == null)
+                    {
+                        MessageBox.Show("Impossible de lire PAN ID", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        if(ID!="OK") txtPANID.Text = ID;
+                        else if ((ID = serialPort1.ReadTo("\r")) == null)
+                             {
+                                MessageBox.Show("Impossible de lire PAN ID", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                             }
+                             else txtPANID.Text = ID;
+                    }
+                }
+                catch
+                {
+
+                }
+
+                serialPort1.Write("ATJV\r");
+                try
+                {
+                    if ((JV = serialPort1.ReadTo("\r")) == null)
+                    {
+                        MessageBox.Show("Impossible de lire JV", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        serialPort1.Write("ATCE\r");
+
+                        if ((CE = serialPort1.ReadTo("\r")) == null)
+                        {
+                            MessageBox.Show("Impossible de configurer CE", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (CE == "0" && JV == "1") rdbRouter.Checked = true;
+                            if (CE == "1" && JV == "0") rdbCoordinator.Checked = true;
+                        }
+                    }
+                }
+                catch { }
+
+                serialPort1.Write("ATNI\r");
+                try
+                {
+
+                    if ((NI = serialPort1.ReadTo("\r")) == null)
+                    {
+                        MessageBox.Show("Impossible de lire le nom du module", "Erreur !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        txbDeviceName.Text = NI;
+                    }
+                }
+                catch { }
+            }
         }
 
     }
